@@ -1,14 +1,17 @@
 FROM n8nio/n8n:latest
 
-ENV DB_TYPE=postgresdb
-ENV DB_POSTGRESDB_HOST=db
-ENV DB_POSTGRESDB_PORT=5432
-ENV DB_POSTGRESDB_DATABASE=n8n
-ENV DB_POSTGRESDB_USER=n8n
-ENV DB_POSTGRESDB_PASSWORD=n8n_password
+
+ENV DB_TYPE=sqlite
+ENV DB_SQLITE_DATABASE=/home/node/.n8n/database.sqlite
+
+
 ENV GENERIC_TIMEZONE=Europe/Istanbul
 
+
 VOLUME /home/node/.n8n
+
+
 EXPOSE 5678
+
 
 CMD ["n8n"]
